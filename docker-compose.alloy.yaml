@@ -1,0 +1,8 @@
+services:
+  site:
+    image: node:22-bookworm
+    working_dir: /workspace
+    network_mode: host
+    volumes:
+      - .:/workspace
+    command: bash -lc "npx --yes http-server@14 . -p 3000 -a 0.0.0.0 -c-1"
